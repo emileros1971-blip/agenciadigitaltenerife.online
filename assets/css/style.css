@@ -1,0 +1,253 @@
+@import url("./style-base.css?v=20260726-2");
+@import url("./logo-override.css?v=20260819-2");
+@import url("./header-nav.css?v=20260819-4");
+@import url("./theme-modern-red.css?v=20260802-2");
+@import url("./portfolio-opel-image.css?v=20260802-1");
+
+/* ============================================================
+   Mobile stability overrides — 2026-08-12
+   Shared by Serbian, English and Hungarian versions.
+   Prevents horizontal layout drift and keeps floating contact
+   buttons inside the visible mobile viewport.
+   ============================================================ */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+body {
+  overflow-wrap: break-word;
+}
+
+main,
+.site-header,
+.site-footer {
+  width: 100%;
+  max-width: 100%;
+}
+
+.container,
+.header-inner,
+.header-actions,
+.hero-grid > *,
+.overview > *,
+.contact-grid > *,
+.footer-grid > *,
+.services-grid > *,
+.portfolio-grid > *,
+.trust-grid > *,
+.process-grid > *,
+.why-grid > *,
+.industries-grid > *,
+.form-grid > *,
+.industry-item > * {
+  min-width: 0;
+}
+
+/* Long translated labels must wrap inside their own card instead of widening the grid. */
+.industry-item,
+.service-card,
+.portfolio-card,
+.process-step,
+.why-item,
+.trust-item {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.industry-item h4,
+.industry-item p,
+.service-card h3,
+.service-card p,
+.why-item h3,
+.why-item p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Keep quick-contact buttons fully visible, including devices with safe areas. */
+.floating {
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 52px;
+  max-width: 52px;
+  padding-bottom: 0;
+  align-items: center;
+}
+
+.floating a {
+  flex: 0 0 52px;
+}
+
+/* Touch devices do not need hover tooltips; hiding them also avoids visual overflow. */
+@media (hover: none), (pointer: coarse) {
+  .floating a[data-tooltip]::after {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  /* The header is the same physical layout in SR / EN / HU on mobile. */
+  .header-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .site-header .logo {
+    width: 100px;
+    height: 60px;
+  }
+
+  .header-actions {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .header-actions > .lang-switch {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .header-actions > .lang-switch a {
+    padding: 5px 8px;
+  }
+
+  .hamburger {
+    flex: 0 0 44px;
+  }
+
+  .mobile-menu {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero-grid,
+  .overview,
+  .contact-grid,
+  .footer-grid,
+  .services-grid,
+  .portfolio-grid,
+  .trust-grid,
+  .process-grid,
+  .why-grid,
+  .industries-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-eyebrow,
+  .hero-services span,
+  .btn {
+    max-width: 100%;
+  }
+
+  .floating {
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    z-index: calc(var(--z-header) + 1);
+  }
+}
+
+/* On phones the information/industry cards use one full-width column.
+   This is especially important in Hungarian where labels are longer. */
+@media (max-width: 699px) {
+  .industries-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-4);
+  }
+
+  .industry-item {
+    width: 100%;
+    padding: var(--sp-5);
+  }
+}
+
+/* If a small tablet uses two columns, make both tracks shrinkable. */
+@media (min-width: 700px) and (max-width: 767px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .header-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 8px;
+  }
+
+  .site-header .logo {
+    width: 90px;
+    height: 54px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .header-actions > .lang-switch a {
+    padding: 4px 6px;
+  }
+
+  .hamburger {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  form.contact-form,
+  .offer-callout {
+    padding-left: var(--sp-5);
+    padding-right: var(--sp-5);
+  }
+}
+
+/* Real client artwork for the social-media-management examples.
+   The inline page styles provide the card shape; this shared rule replaces
+   the temporary SVG symbols across Serbian, English and Hungarian. */
+.managed-sample-avatar {
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.managed-sample-avatar svg {
+  display: none !important;
+}
+
+.managed-sample-card:nth-child(1) .managed-sample-avatar {
+  background-image: url("../img/social/pub-old-palic.jpg?v=20260819-1") !important;
+}
+
+.managed-sample-card:nth-child(2) .managed-sample-avatar {
+  background-image: url("../img/social/klas-024.jpg?v=20260819-1") !important;
+}
+
+.managed-sample-card:nth-child(3) .managed-sample-avatar {
+  background-image: url("../img/social/prikolice-co-srb.jpg?v=20260819-1") !important;
+}
+
+/* ADT localization */
+.adt-logo{display:inline-flex;align-items:center;gap:.65rem;color:var(--c-text);font-weight:800;text-decoration:none;white-space:nowrap}.adt-logo-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:var(--c-primary);color:#fff;font-weight:800}.adt-logo b{color:var(--c-primary)}.hero-agency-visual{min-height:380px;display:grid;place-items:center;background:#fff}.agency-stack{width:min(90%,480px);display:grid;gap:12px}.agency-stack span{display:block;padding:18px 22px;border:1px solid var(--c-border);border-left:6px solid var(--c-primary);border-radius:var(--radius);background:var(--c-bg);font-size:clamp(1.05rem,2vw,1.45rem);font-weight:800;box-shadow:var(--shadow-sm)}.video-portfolio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-6)}.video-frame{aspect-ratio:16/9;border:0;width:100%;border-radius:var(--radius);background:#111}.portfolio-placeholder{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#fff,var(--c-primary-soft));color:var(--c-primary);font-size:1.5rem;font-weight:800}.signal-fab{background:#3a76f0!important}.signal-fab svg{width:25px;height:25px}@media(max-width:700px){.video-portfolio{grid-template-columns:1fr}.hero-agency-visual{min-height:280px}.adt-logo>span:last-child{display:none}}
