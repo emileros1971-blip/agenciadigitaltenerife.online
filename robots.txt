@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agenciadigitaltenerife.online/sitemap.xml
