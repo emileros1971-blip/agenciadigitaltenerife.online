@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-labelledby="title desc">
+  <title id="title">Agencia Digital Tenerife</title>
+  <desc id="desc">Agencia Digital Tenerife logo</desc>
+  <g transform="translate(4 4) scale(.8125)">
+    <rect width="128" height="128" rx="28" fill="#17191d"/>
+    <circle cx="96" cy="31" r="14" fill="#e5243b"/>
+    <path d="M25 91 55 31h18l30 60H82l-6.5-14H52L45 91H25Zm34-30h10l-5-12-5 12Z" fill="#fff"/>
+    <path d="M27 99c20-7 47-7 74 0" fill="none" stroke="#e5243b" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g font-family="Inter,Arial,sans-serif" fill="#17191d">
+    <text x="128" y="51" font-size="35" font-weight="800" letter-spacing="-.8">Agencia Digital</text>
+    <text x="128" y="86" font-size="35" font-weight="800" letter-spacing="-.8">Tenerife<tspan fill="#e5243b">.online</tspan></text>
+  </g>
+</svg>

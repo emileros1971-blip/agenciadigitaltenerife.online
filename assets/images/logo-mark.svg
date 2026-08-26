@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Agencia Digital Tenerife</title>
+  <desc id="desc">Geometric A with a red Tenerife sun</desc>
+  <rect width="128" height="128" rx="28" fill="#17191d"/>
+  <circle cx="96" cy="31" r="14" fill="#e5243b"/>
+  <path d="M25 91 55 31h18l30 60H82l-6.5-14H52L45 91H25Zm34-30h10l-5-12-5 12Z" fill="#fff"/>
+  <path d="M27 99c20-7 47-7 74 0" fill="none" stroke="#e5243b" stroke-width="8" stroke-linecap="round"/>
+</svg>
