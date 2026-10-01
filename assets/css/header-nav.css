@@ -352,3 +352,51 @@
     color: var(--c-primary);
   }
 }
+
+
+/* Keep language choices visible side by side; the old hover dropdown was hard to use. */
+.header-actions > .lang-switch {
+  position: static !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: auto !important;
+  height: auto !important;
+  min-height: 38px;
+  padding: 4px;
+  overflow: visible;
+  z-index: auto;
+}
+.header-actions > .lang-switch::before { content: none !important; }
+.header-actions > .lang-switch > a,
+.header-actions > .lang-switch > a:not([aria-current="true"]) {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: auto !important;
+  min-width: 42px;
+  min-height: 34px;
+  padding: 5px 8px;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  box-shadow: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+.header-actions > .lang-switch > a[aria-current="true"] { background: var(--c-primary-soft); color: var(--c-primary); }
+.header-actions > .lang-switch > a[aria-current="true"]::after { content: none !important; }
+.header-actions > .lang-switch > a:hover { background: var(--c-primary-soft); color: var(--c-primary); }
+.lang-flag { font-size: 1.15rem; line-height: 1; }
+.lang-code { font-size: .7rem; font-weight: 800; letter-spacing: .03em; }
+@media (max-width: 899px) {
+  .header-actions > .lang-switch { flex: 0 0 auto; width: auto !important; height: auto !important; }
+}

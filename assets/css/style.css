@@ -262,3 +262,83 @@ main,
 
 /* Verified Google reviews */
 .reviews-section{overflow:hidden}.google-rating{display:inline-flex;align-items:center;gap:.7rem;margin-top:1rem;padding:.7rem 1rem;border:1px solid var(--c-border);border-radius:999px;background:#fff;color:var(--c-text);text-decoration:none;box-shadow:var(--shadow-sm)}.google-rating:hover{border-color:var(--c-primary);transform:translateY(-1px)}.google-g{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid #dadce0;color:#4285f4;font-size:1.2rem;font-weight:800}.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-6)}.review-card{display:flex;flex-direction:column;min-width:0;padding:var(--sp-6);border:1px solid var(--c-border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow-sm)}.review-stars{margin-bottom:var(--sp-4);color:#fbbc04;font-size:1.15rem;letter-spacing:.12em}.review-card blockquote{flex:1;margin:0 0 var(--sp-5);color:var(--c-text);font-size:1rem;line-height:1.7}.review-card footer{display:flex;flex-direction:column;gap:.2rem;padding-top:var(--sp-4);border-top:1px solid var(--c-border)}.review-card footer span{color:var(--c-text-muted);font-size:.86rem}.reviews-link{text-align:center;margin-top:var(--sp-7)}@media(max-width:767px){.reviews-grid{grid-template-columns:1fr}.review-card{padding:var(--sp-5)}}
+
+
+/* Tenerife visual identity and clearer starting-price presentation. */
+.hero,
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.hero::after,
+.page-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: clamp(-105px, -7vw, -36px);
+  right: clamp(-70px, 3.5vw, 54px);
+  width: clamp(245px, 33vw, 430px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(229, 36, 59, .09);
+  background-image: url("../img/teide-hero.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: .43;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.hero > .container,
+.page-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+.offer-callout {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 26px;
+  background: radial-gradient(ellipse at 92% 0%, rgba(255,255,255,.2), transparent 42%), linear-gradient(135deg, #b8172c 0%, #e5243b 55%, #a9152b 100%);
+  box-shadow: 0 24px 60px rgba(157, 20, 40, .2);
+}
+.offer-callout::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 330px;
+  height: 330px;
+  right: -170px;
+  bottom: -230px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px rgba(255,255,255,.045), 0 0 0 50px rgba(255,255,255,.035);
+}
+.offer-callout > * { position: relative; z-index: 1; }
+.offer-callout .offer-price {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: .32em;
+  padding: .42em .85em;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 999px;
+  background: rgba(255,255,255,.13);
+  box-shadow: 0 10px 28px rgba(95, 8, 24, .16);
+  backdrop-filter: blur(8px);
+}
+.offer-callout .offer-price strong { font-size: 1.24em; font-weight: 900; letter-spacing: -.045em; }
+.offer-callout p { max-width: 56ch; margin-left: auto; margin-right: auto; color: rgba(255,255,255,.88); }
+.offer-callout .offer-eyebrow { border: 1px solid rgba(255,255,255,.25); }
+@media (max-width: 700px) {
+  .hero::after,
+  .page-hero::after {
+    top: -105px;
+    right: -95px;
+    width: 250px;
+    opacity: .25;
+  }
+  .offer-callout { border-radius: 20px; padding: var(--sp-6); }
+}
