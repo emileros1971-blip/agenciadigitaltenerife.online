@@ -287,8 +287,8 @@ main,
     linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.72) 42%, rgba(255,255,255,.38) 100%),
     url("../img/teide-hero.png");
   background-repeat: no-repeat;
-  background-position: center, center;
-  background-size: cover;
+  background-position: center, 95% center;
+  background-size: cover, 150% auto;
   opacity: 1;
   mix-blend-mode: normal;
   pointer-events: none;
@@ -345,6 +345,7 @@ main,
       linear-gradient(rgba(255,255,255,.82), rgba(255,255,255,.82)),
       url("../img/teide-hero.png");
     background-position: center, center;
+    background-size: cover;
     opacity: 1;
   }
   .offer-callout { border-radius: 20px; padding: var(--sp-6); }
