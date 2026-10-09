@@ -1,0 +1,122 @@
+/* Atlantic / lava / sand. Presentation only; content and interactions retained. */
+:root {
+  --c-bg: #f7f5ef;
+  --c-bg-alt: #eee8de;
+  --c-surface: #fffdf9;
+  --c-border: #ddd6ca;
+  --c-border-strong: #bfb5a6;
+  --c-text: #252b2d;
+  --c-text-muted: #566064;
+  --c-text-soft: #687276;
+  --c-primary: #102c3a;
+  --c-primary-dark: #0b202b;
+  --c-primary-soft: #e3e9e9;
+  --c-accent: #b87950;
+  --c-error: #b3261e;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 6px rgba(16,44,58,.04);
+  --shadow: 0 10px 30px rgba(16,44,58,.07);
+  --shadow-lg: 0 24px 60px -20px rgba(16,44,58,.2);
+}
+::selection { background: #e8ddca; color: #102c3a; }
+body { background: var(--c-bg); }
+h1,h2,h3,h4 { font-family: var(--font-sans); letter-spacing: -.035em; }
+.btn { border-radius: 5px; }
+.btn-primary { background: var(--c-primary); border-color: var(--c-primary); }
+.btn-primary:hover { background: var(--c-primary-dark); border-color: var(--c-primary-dark); }
+.site-header { background: #102c3a; border-bottom-color: #314753; backdrop-filter: none; }
+.site-header .adt-logo,.site-header .adt-logo b,.site-header .main-nav a,
+.site-header .header-phone,.site-header .hamburger { color: #f7f5ef; }
+.site-header .adt-logo { font-size: .93rem; letter-spacing: -.025em; }
+.site-header .adt-logo b { color: #dbac8e; }
+.header-inner { padding-left: 20px; padding-right: 20px; }
+.site-header .main-nav a { font-size: .82rem; }
+.site-header .main-nav a:hover,.site-header .main-nav a[aria-current="page"] {
+  background: rgba(255,255,255,.08); color: #efc1a2;
+}
+.site-header .lang-switch { background: transparent; border-color: #536571; }
+.site-header .lang-switch a { color: #f7f5ef; }
+.site-header .header-actions > .lang-switch > a[aria-current="true"],
+.site-header .header-actions > .lang-switch > a:hover {
+  background: rgba(255,255,255,.1); color: #f7f5ef;
+}
+.site-header .header-cta { background: #e8ddca; border-color: #e8ddca; color: #102c3a; }
+.site-header .header-cta:hover { background: #f7f5ef; border-color: #f7f5ef; }
+.hero,.page-hero { background: #102c3a; color: #f7f5ef; border-bottom: 0; }
+.hero { padding-top: clamp(3rem,6vw,6rem); padding-bottom: clamp(3rem,6vw,6rem); }
+.hero::before,.page-hero::before { content: none; }
+.hero::after,.page-hero::after {
+  background-image: linear-gradient(90deg,rgba(10,27,36,.94),rgba(10,27,36,.65) 55%,rgba(10,27,36,.22)),url('../img/atlantic-coast.webp');
+  background-size: cover; background-position: center,center 52%; opacity: 1;
+}
+.hero-grid { gap: clamp(2rem,4vw,4rem); }
+.hero h1 { font-size: clamp(2.25rem,4vw,3.65rem); max-width: 19ch; line-height: 1.1; }
+.hero h1,.hero h1 strong,.hero h1 em,.hero h1 span,
+.hero .hero-lead,.hero .hero-meta,.hero .hero-meta strong,.hero .hero-meta a {
+  color: #f7f5ef;
+}
+.hero .hero-lead { color: #e0e5e5; max-width: 49ch; }
+.hero-eyebrow { background: transparent; color: #e8ddca; border: 0; border-radius: 0; padding: 0; line-height: 1.6; }
+.hero-eyebrow::before { background: #d6a481; flex-shrink: 0; width: 5px; height: 5px; }
+.hero-services span { background: rgba(16,44,58,.4); border-color: #71818a; color: #f7f5ef; border-radius: 4px; }
+.hero .btn-primary { background: #b87950; border-color: #b87950; color: #10202a; box-shadow: none; font-weight: 800; }
+.hero .btn-primary:hover { background: #ce946e; border-color: #ce946e; color: #10202a; box-shadow: none; }
+.hero .btn-secondary { background: transparent; color: #f7f5ef; border-color: #b4c0c4; }
+.hero .btn-secondary:hover { color: #fff; border-color: #fff; background: rgba(255,255,255,.08); }
+.hero-agency-visual { background: rgba(12,31,41,.75); border: 1px solid #65757d; box-shadow: none; backdrop-filter: blur(6px); min-height: 340px; }
+.agency-stack { gap: 0; width: 100%; padding: 1.5rem 2rem; }
+.agency-stack span { background: transparent; color: #f7f5ef; border: 0; border-bottom: 1px solid #52606a; border-left: 2px solid #b87950; border-radius: 0; box-shadow: none; font-size: clamp(.95rem,1.4vw,1.2rem); font-weight: 600; padding: 1.25rem 1rem; }
+.agency-stack span:last-child { border-bottom: 0; }
+.trust { background: #e8ddca; border-color: #d6cab8; padding: 1.7rem 0; }
+.trust-item span { font-size: .85rem; color: #102c3a; }
+.section-alt { background: var(--c-bg-alt); }
+.section-eyebrow { color: #6e4b35; letter-spacing: .13em; }
+.section-head p { color: var(--c-text-muted); }
+.service-card,.portfolio-card,.process-step,.why-item,.pricing-card,
+.faq-item,form.contact-form,.industry-item,.review-card { background: var(--c-surface); border-color: var(--c-border); box-shadow: none; }
+.service-card { border-top: 2px solid #b87950; }
+.service-card:hover,.portfolio-card:hover,.industry-item:hover { border-color: #b87950; box-shadow: var(--shadow); }
+.service-card a { font-weight: 600; }
+.portfolio-img { background: #e8ddca; }
+.portfolio-category { color: #6e4b35; letter-spacing: .06em; }
+.industry-item { border-radius: 5px; }
+.process-num { background: #102c3a; color: #e8ddca; }
+.overview li::before { background-color: #e3e9e9; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23102c3a'%3E%3Cpath d='M8.5 13.6l-3.1-3.1L4 12l4.5 4.5L17 8l-1.4-1.4z'/%3E%3C/svg%3E"); }
+.offer-callout { background: #102c3a; border: 1px solid #314753; border-radius: 12px; box-shadow: none; padding: clamp(2rem,4vw,3rem); }
+.offer-callout::before { content: none; }
+.offer-callout h2,.offer-callout p { color: #f7f5ef; }
+.offer-callout .offer-eyebrow { background: transparent; color: #e8ddca; border: 0; padding: 0; border-radius: 0; }
+.offer-callout .offer-price { color: #e8ddca; border: 0; background: transparent; padding: 0; border-radius: 0; box-shadow: none; backdrop-filter: none; }
+.offer-callout .btn-primary,.final-cta .btn-primary { background: #e8ddca; border-color: #e8ddca; color: #102c3a; }
+.offer-callout .btn-primary:hover,.final-cta .btn-primary:hover { background: #f7f5ef; border-color: #f7f5ef; color: #102c3a; }
+.final-cta { background: #102c3a; }
+.page-hero { padding-top: clamp(3rem,6vw,5rem); padding-bottom: clamp(2.5rem,5vw,4rem); }
+.page-hero h1 { color: #f7f5ef; max-width: 28ch; }
+.page-hero .breadcrumbs,.page-hero .breadcrumbs a { color: #e8ddca; }
+.field input,.field select,.field textarea { background: #fffdf9; }
+.site-footer { background: #0b202b; color: #e8ddca; }
+.site-footer a { color: #e8ddca; }
+.footer-brand p,.footer-bottom { color: #b5c0c3; }
+.footer-bottom { border-color: #314753; }
+.google-rating { background: var(--c-surface); box-shadow: none; }
+.review-stars { color: #8a5a27; }
+@media (min-width:900px) { .hero-grid { grid-template-columns: 1.3fr .85fr; } }
+/* Full navigation fits comfortably at desktop widths; smaller screens keep the existing menu. */
+@media (min-width:900px) and (max-width:1199px) {
+  .main-nav { display: none; }
+  .header-actions .hamburger { display: inline-flex; }
+  .header-inner { padding: 12px 20px; }
+}
+@media (max-width:899px) {
+  .hero::after,.page-hero::after { background-image: linear-gradient(rgba(10,27,36,.82),rgba(10,27,36,.82)),url('../img/atlantic-coast.webp'); background-position: center,60% center; background-size: cover; }
+  .hero-agency-visual { min-height: 0; backdrop-filter: none; }
+  .agency-stack { padding: 1rem; }
+  .agency-stack span { padding: 1rem; }
+}
+@media (max-width:700px) {
+  .hero h1 { font-size: clamp(2.1rem,8vw,3rem); }
+  .hero .hero-lead { font-size: 1rem; }
+  .hero-grid { gap: 2rem; }
+  .hero-ctas .btn { width: 100%; }
+}
