@@ -1,0 +1,61 @@
+/* One soft greeting sequence per page load, Spanish followed by English.
+   Decoration stays behind the hero content and never captures input. */
+.hero > .container { z-index: 2; }
+.welcome-wave {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.welcome-word {
+  position: absolute;
+  top: 44%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #f7f5ef;
+  font-family: var(--font-sans);
+  font-size: clamp(5rem, 15vw, 13rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  opacity: 0;
+  animation: welcome-drift 4.2s cubic-bezier(.25,.45,.4,1) both;
+}
+.welcome-word--es { animation-delay: .15s; }
+.welcome-word--en { animation-delay: 4.4s; }
+.welcome-word > span {
+  display: inline-block;
+  animation: welcome-ripple 2.1s ease-in-out 4 alternate both;
+  animation-delay: calc(var(--letter) * .11s);
+}
+.welcome-word--en > span { animation-delay: calc(4.25s + var(--letter) * .11s); }
+@keyframes welcome-drift {
+  0% { opacity: 0; transform: translate(-24%, 12px) rotate(-1deg); }
+  18% { opacity: .17; }
+  45% { opacity: .18; transform: translate(-3%, -10px) rotate(0deg); }
+  70% { opacity: .15; }
+  100% { opacity: 0; transform: translate(24%, 12px) rotate(1deg); }
+}
+@keyframes welcome-ripple {
+  from { transform: translateY(.045em) rotate(-1.2deg); }
+  to { transform: translateY(-.065em) rotate(1.2deg); }
+}
+@media (max-width: 700px) {
+  .welcome-word { font-size: 19vw; top: 32%; }
+  @keyframes welcome-drift {
+    0% { opacity: 0; transform: translate(-12%, 6px); }
+    18% { opacity: .14; }
+    45% { opacity: .16; transform: translate(-2%, -6px); }
+    70% { opacity: .13; }
+    100% { opacity: 0; transform: translate(12%, 6px); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-wave { display: none; }
+  .welcome-word,.welcome-word > span { animation: none; }
+}
