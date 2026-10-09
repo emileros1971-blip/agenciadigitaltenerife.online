@@ -30,7 +30,7 @@ h1,h2,h3,h4 { font-family: var(--font-sans); letter-spacing: -.035em; }
 .site-header .header-phone,.site-header .hamburger { color: #f7f5ef; }
 .site-header .adt-logo { font-size: .93rem; letter-spacing: -.025em; }
 .site-header .adt-logo b { color: #dbac8e; }
-.header-inner { padding-left: 20px; padding-right: 20px; }
+.header-inner { padding-left: 20px; padding-right: 20px; max-width: 1440px; }
 .site-header .main-nav a { font-size: .82rem; }
 .site-header .main-nav a:hover,.site-header .main-nav a[aria-current="page"] {
   background: rgba(255,255,255,.08); color: #efc1a2;
@@ -103,9 +103,9 @@ h1,h2,h3,h4 { font-family: var(--font-sans); letter-spacing: -.035em; }
 .review-stars { color: #8a5a27; }
 @media (min-width:900px) { .hero-grid { grid-template-columns: 1.3fr .85fr; } }
 /* Full navigation fits comfortably at desktop widths; smaller screens keep the existing menu. */
-@media (min-width:900px) and (max-width:1199px) {
+@media (min-width:900px) and (max-width:1399px) {
   .main-nav { display: none; }
-  .header-actions .hamburger { display: inline-flex; }
+  .header-actions .hamburger,.mobile-menu .hamburger { display: inline-flex; }
   .header-inner { padding: 12px 20px; }
 }
 @media (max-width:899px) {
