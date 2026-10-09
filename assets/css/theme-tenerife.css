@@ -28,6 +28,7 @@ h1,h2,h3,h4 { font-family: var(--font-sans); letter-spacing: -.035em; }
 .site-header { background: #102c3a; border-bottom-color: #314753; backdrop-filter: none; }
 .site-header .adt-logo,.site-header .adt-logo b,.site-header .main-nav a,
 .site-header .header-phone,.site-header .hamburger { color: #f7f5ef; }
+.adt-logo-mark { background-image: url("../images/logo-mark.svg?v=20261009-atlantic"); }
 .site-header .adt-logo { font-size: .93rem; letter-spacing: -.025em; }
 .site-header .adt-logo b { color: #dbac8e; }
 .header-inner { padding-left: 20px; padding-right: 20px; max-width: 1440px; }
