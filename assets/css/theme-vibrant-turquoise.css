@@ -157,8 +157,7 @@ h4,
 .pricing-card,
 .faq-item,
 form.contact-form,
-.industry-item,
-.cookie {
+.industry-item {
   background: var(--c-surface);
 }
 
@@ -203,8 +202,7 @@ form.contact-form,
 
 .field input,
 .field select,
-.field textarea,
-.cookie-prefs .cp-panel {
+.field textarea {
   background: #fffdf8;
 }
 
