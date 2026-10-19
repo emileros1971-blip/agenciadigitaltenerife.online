@@ -24,16 +24,16 @@ function loadMetaPixel() {
   window.fbq('track', 'PageView');
 }
 function metaPixelConsent() {
-  const key = 'adtMarketingConsent';
+  const key = 'adtMeasurementConsentV2';
   const read = () => { try { return localStorage.getItem(key); } catch { return null; } };
   const save = value => { try { localStorage.setItem(key, value); } catch {} };
-  if (read() === 'granted') loadMetaPixel();
+  if (read() === 'granted') { loadMetaPixel(); loadGoogleAnalytics(); }
   const banner = $('#cookie-banner');
   if (!banner) return;
   const es = document.documentElement.lang.startsWith('es');
   banner.querySelector('p').textContent = es
-    ? 'Usamos cookies esenciales y, con su permiso, el píxel de Meta para medir visitas y publicidad.'
-    : 'We use essential cookies and, with your permission, the Meta Pixel to measure visits and advertising.';
+    ? 'Usamos cookies esenciales y, con su permiso, Google Analytics y el píxel de Meta para medir visitas y publicidad.'
+    : 'We use essential cookies and, with your permission, Google Analytics and the Meta Pixel to measure visits and advertising.';
   const accept = $('#cookie-accept');
   const actions = banner.querySelector('.cookie-actions');
   let reject = $('#cookie-reject');
@@ -51,10 +51,25 @@ function metaPixelConsent() {
   accept.addEventListener('click', () => {
     save('granted');
     loadMetaPixel();
+    loadGoogleAnalytics();
     banner.hidden = true;
   });
   reject.addEventListener('click', () => {
     save('denied');
     banner.hidden = true;
   });
+}
+
+const ADT_GA4_ID = 'G-HC1GG3TXLK';
+function loadGoogleAnalytics() {
+  if (window.adtGoogleAnalyticsLoaded) return;
+  window.adtGoogleAnalyticsLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', ADT_GA4_ID);
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ADT_GA4_ID;
+  document.head.appendChild(script);
 }
