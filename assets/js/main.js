@@ -48,15 +48,18 @@ function metaPixelConsent() {
   accept.textContent = es ? 'Aceptar' : 'Accept';
   reject.textContent = es ? 'Rechazar' : 'Reject';
   banner.hidden = read() === 'granted' || read() === 'denied';
+  banner.dataset.open = String(!banner.hidden);
   accept.addEventListener('click', () => {
     save('granted');
     loadMetaPixel();
     loadGoogleAnalytics();
     banner.hidden = true;
+    banner.dataset.open = 'false';
   });
   reject.addEventListener('click', () => {
     save('denied');
     banner.hidden = true;
+    banner.dataset.open = 'false';
   });
 }
 
